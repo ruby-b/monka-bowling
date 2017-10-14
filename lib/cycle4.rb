@@ -48,6 +48,9 @@ class Bowling
       # 合計をフレームごとに記録しておく
       @frame_score << @total_score
     end
+    # 最終フレームの3投目などは @temp に格納されているので、それを拾う
+    @total_score += @temp.sum
+    @frame_score[@frame_score.length - 1] += @temp.sum
   end
 
   private
