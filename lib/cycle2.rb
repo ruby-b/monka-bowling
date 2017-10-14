@@ -36,6 +36,8 @@ class Bowling
         @total_score += score.inject(:+)
       end
     end
+    # 最終フレームの3投目などは @temp に格納されているので、それを拾う
+    @total_score += @temp.sum
   end
 
   private
